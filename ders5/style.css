@@ -1,0 +1,47 @@
+ 
+ 
+ .container{
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+
+}
+
+.box1{
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    position:absolute ;
+}
+.box2{
+    width: 300px;
+    
+    height: 100px;  position:absolute ;
+    background-color: lightblue;
+}
+.box3{
+    width: 50px;
+    height: 100px;
+    background-color: lime;
+    position:absolute ;
+
+}
+  
+
+  /* .fixed{
+    position: fixed;
+    width: 300px;
+    border: 3px solid orange;
+    right: 0;
+    bottom: 0;
+    background-color: green;
+  } */
+
+  .sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: bisque;
+    border: 2px soldi red;
+  }

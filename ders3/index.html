@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/favicon (1).jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Genel Tekrar | Tablolar</title>
+</head>
+<body>
+    <!-- Html neydi ilk olarak onun üstünden geçelim;
+    HTML, genel olarak web sitelerindeki şablonları oluşturan bir etiketleme dilidir demiştik.
+    Parantezler içerisine yazılan karakterler ile etiketin kullanım amacını belirtiyorduk. 
+    
+    Etiketlerimiz arasına istediklerimi belirtiyorduk bazı etiketler 
+    hariç hepsini kapatıyorduk 
+    bunlar şu anlık bilseniz <meta>,<br>,<hr> vb.
+
+    İskeletimiz <!DOCTYPE html> diyerek html olacağını belirtip,
+    <html> ana kapsayıcı olup, <head> etiketi arasına başlık ve meta
+    etiketlerimizi yazarak, seo için alt bir hazırlık yapıyorduk.
+    
+    Devamında kalan tüm kodlarımızı (henüz bahsetmediğim css'ekleme haricinde) hepsini
+    buraya ekliyorduk.
+
+    Başlıklarımız vardı bunlar en önemli ve en büyük olarak h1 den başlayıp h6'ya kadar gidiyordu.
+    paragraflar için <p> etiketimizi,kalın ve italik için <b>,<i> etiketlerimizi,
+    küçük şekilde belirteceksek <small>, üst yazılı bir formül halinde yazacaksak <sup>,
+    alt yazılı bir formül halinde yazacaksak <sub> etiketini,
+
+        Üst yazı için;
+        <p> Formül : E =m.c<sup>2</sup> : </p> şeklinde belirtiyorduk.
+        Alt yazı için;
+        <p>Karbondioksitin formülü CO <sub> 1 </sub>.</p>
+
+    Küçük yazı ve kalını belirtmek için;
+    <p>Bu yazımızda en önemli rakamımız <b> 9</b>
+        en önemsiz rakamımız ise <small>0</small>'dır</p>
+
+    Yeni bir satıra geçmek için <br> etiketini,yatay çizgiler için <hr> etiketini,
+    vurgulu bir yazı için <em> etiketini,güçlü yazılar için <strong> etiketini yani;
+
+        <p> Bizim için önemli olan <br> kısımlarımızdan biri de <em>burasıdır</em>
+            ve fiyatı da <strong> 1500tl</strong> olacaktır.
+
+    <blockquote>etiketimiz vardı bu   blockquote'ı
+        tüm paragrafı kapsayanlar için kullanıyoruz, bir paragraf içerisinde kısa 
+        alıtılar için <q> kullanıyoruz.
+        
+        <blockquote>
+            <q>Daha önce hiç alıntı yapılmış bir metin görüdünüz mü </q>
+        </blockquote>
+    
+        Kısa alıntı yaparken de ;
+        <p> HTML'de <q>alıntı</q> için bu ikisi kullanılır.</p>
+
+    Kısaltmaları belirtmek için <abbr> , bir sayfamız içerisinde ki göndermeleri referans içinde
+        <cite>'ı kullanıyorduk.
+
+            <p>İyi bir <abbr title="Frontend Developer">WebD</abbr> çok fazla çalışmalısınız
+                diyerek belirtmiş <cite>patika</cite> bir yazısında </p>
+
+    Web sayfamız içerisinde ki yazılarda da çeşitli değişiklikler yapabiliyorduk,
+    bunlar genelde <del>,<ins> ve <s> etiketlerini kullanarak yapıyorduk.
+    del etiketimizde silinecek metni, ins etiketimizde eklenecek metni giriyoruz.
+
+            <p>HTML bir <del>programlama</del> <ins> işaretleme </ins> dilidir. </p>
+        Mesela başka bir örnek verecek olursak;
+            <p> Masaüstü bilgisayar <s>15.000tl</s> yerine 10.000. </p>
+    Gibi belirtmelerimizi yapıyoruz.
+
+    
+
+    Adres kısmı çok havada kalmıştı onun da bi üzerinden geçip genel bir proje tarzı beraber bir şey yapalım,
+    Adres etiketi yazarın iletişim bilgilerini tutar elimizde.Bu iletişim bilgisi olabileceği gibi,
+    fiziksel bir adres,telefon numarası,e-mail adresi gibi bilgilerde olabilir.
+
+    <address>
+        <p>
+            <a href="mailto:furkantasdemir@patika.dev">furkantasdemir@patika.dev</a>
+        </p>
+        <p>GİRESUN/MERKEZ</p>
+    </address>
+    Şeklinde bir belirtme yapabiliriz.
+
+    Şimdi bunlar üzerinden basit bir örnek yapalım,
+
+    <h1>Frontend Nedir ?</h1> bir başlık verelim.
+    <h3>Uygulayacağımız RoadMap</h3>
+    <p> 
+        <b>Frontend</b> lorem10.
+        <i>Developer</i> lorem10.
+        <br>
+        <cite>Uygulayacağımız Adımlar</cite>
+        lorem20.
+    </p> Bir metin daha ekleyelim;
+    <p>
+        kitabımızda ki yazıalrı lorem5
+        <br>
+        <em>Markus Zusak</em> Hiçkimse Sıradan Değildir.
+        <abbr title="Portable Document Format">PDF</abbr><hr>
+        <q>Herkesin okuması gereken bir kitap </q>        
+        <address>
+        <p>
+            <a href="mailto:furkantasdemir@patika.dev">furkantasdemir@patika.dev</a>
+        </p>
+        </address>
+    </p> 
+    <hr>
+    Listeler üzerinden de bir tane örnek yapalım;
+    <h1>Frontend Developer Nedir ? Nasıl olunur ? </h1>
+    <p> Frontend Developer, web sitelerini geliştiren kişidir.</p>
+    <h3>Frontend Yeterlilikleri</h3>
+    <ul>
+        <li>HTML,CSS,JS dillerine hakim olmalıdır.</li>
+        <li>Çeşitli kütüphane ve frameworklerini bilmek</li>
+        <li>Kendini geliştirme isteği</li>
+    </ul> 
+    HTML'de sıralı ve sırasız olmak üzere sık kullanılan iki tip liste vardı,Sıralı listeler numara kullanırken,
+    sırasız listeler madde imleci kullanır.
+
+    Bağlantı verip <a> etiketiyle yönlendirme verdiğimiz gibi zip dosyalarımızı da verebiliriz,
+        bu sefer verdiğimiz bağlantıya tıkladığımızda dosyamızı direkt olarak indirir.
+        <h5>Dosyaya Bağlantı Verme</h5>
+        <a href="deneme.zip" target="_self">İNDİR</a>   
+
+    Web sayfanızı ziyaret eden kullanıcı nın herhangi bir
+     e-posta programı aracılığı 
+    ile size e-posta gönderebilmesi için yine <a> etiketi kullanılır.
+     Ancak, bu kez href özniteliği mailto: ile başlar 
+     ve e-posta gönderilmesini  istediğiniz e-posta adresi ile devam eder.
+     <a href="mailto:furkantasdemir@patika.dev">Mail Gönder</a>
+    Aynı şekilde telefon üzerinden iletişime geçmek isteyen insanlar için;
+    <a href="tel:05555555">Beni Ara</a>
+
+    Bölüm bağlantuılarını sağlamak için de kullanırız. 
+    Yani o ne derseniz Uzun bir web sayfanız varsa, aşağıdaki 
+    sayfa bölümlerine bağlantı vermek
+    isteyebilirsiniz. Ya da sayfanın en altına giden 
+    kullanıcıların tekrar sayfanın başına
+     gitmesini kolaylaştırmak için bir bağlantı vermek isteyebilirsiniz. 
+    Bir sayfanın belirli bir bölümüne bağlantı ile gidebilmek 
+    için ilk olarak 
+    gidilecek bölümün sayfa içerisinde id global özniteliği
+     kullanılarak belirtil
+    mesi gerekir.id'yi sadece 1 kere verebiliyoruz 
+    o nesne için daha fazla da kullanamıyoruz.
+    
+    Sayfanın en yukarısına çık, ilk p etiketine gel içerisin id="content" yazdık
+    şimdi burada p etiketime id değerimi atadım şimdi de en altına geliyrum sayfanın
+    <a href="#content">Yukarı Çık</a> Ben bu linke tıklayınca a etiketine beni yönlendirmesi için 
+    content değerini verdim ve content değeri de p etiketinde beni direkt oraya götürecektir.
+   
+    Görselimizi eklerken img etiketini kllanıyorduk, bunu bir çerçeve gibi alıp başlıklı şekilde yazmamız için de
+    figure ve figcaption etiketlerini kullanırız.<figure> ana kapsayıcı öge iken, <figcaption> etiketi, <figure> etiketi
+    içerisinde yer alır ve görselin başlığını içerir.
+
+
+    <figure>
+        <img src="img/html5logo.jpg" alt="HTML5 Logo" width="200" height="200">
+        <figcaption>
+            HTML5 bir programlama dili değildi, <br> işaretleme dilidir.
+        </figcaption>
+    </figure>
+    
+    Şimdi table'a bi girişimizi yapalım genel tekrarımızı yaptık bunu salı günü tam aklında oturmayan arkadaşlarda
+    olsun, herkesin aklında bi otursun diye yaptım, bitmezse eğer büyük ihtimal pazartesi günü ek ders yaparız
+    kalan yerleri hallederiz.Belki unuturum falan bana hatırlatırsınız dc üzerinden pazar günü veya pazartesi günü hallederiz.
+
+    Şimdi tablolar;
+    Web sayfamız içerisinde ziyaretçilere, 
+    raporları ve  sonuçları gibi verileri daha anlaşılabilir 
+    olması için ızgara biçiminde, 
+    tablolar halinde gösteririz.
+    Bu tabloların her bir bloğu 'tablo hücresi' 
+    olarak adlandırılır ve her tablo satır satır yazılır.
+    
+    Temel Tablo yapımız için 4 temel html etiketi kullanırız bunlar,
+    <table>,tr,td,th'dir.
+    <table> etiketi, bir tablo oluşturmak için kullanılır. 
+        Diğer elemanlar bu etiketin içerisine yazılır
+    <tr> etiketi, tablo satır başlangıcını ifade eder. 
+        <th> ve <td> etiketleri, bu etiketin içerisine yazılır.
+    <td> etiketi, tablo hücresini temsil eder. İçerisinde 
+        tablo verilerini tutar.
+    <th> etiketi, tablo sütün başlığını temsil eder. <td> 
+        etiketi içerisinde tutulan verilerin başlığını belirtir
+
+    TEMEL TABLO YAPISINI YAPALIM
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Numarasın</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Furkan</td>
+            <td>Taşdemir</td>
+            <td>433</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ersin</td>
+            <td>Mutlu</td>
+            <td>1</td>
+        </tr>
+    </table>
+    Çıktıda gördüğümüz gibi th etiketini ide otomatik olarak başlık olarak aldıgı 
+    için daha kalın gösteriyor.
+
+    Bazen web sayfamız içerisine eklediğimiz tablo satırlarının,
+     tek bir satırı
+     değil de birden fazla satırı kaplamasını isteyebiliriz.
+    <td> veya <th> etiketine, 'rowspan' özniteliğini vererek bir tablo hücresinin 
+        aşağıya doğru kaç satırı kaplayacağını belirtiyoruz.
+
+    <table>
+        <tr>
+            <th>Saat</th>
+            <th>Pazartesi</th>
+            <th>Salı</th>
+        </tr>
+        <tr>
+            <td>08-10</td>
+            <td rowspan="2">Kahvaltı</td>
+            <td>Serbest Koşu</td>
+        </tr>
+        <tr>
+            <td>11-12</td>
+            <td>Yürüyüş</td>
+        </tr>
+    </table>
+                
+    <td> veya <th> etiketine, 'colspan' özniteliğini vererek bir tablo hücresinin sağa doğru kaç sütunu kaplayacağını belirtebiliriz
+    <table>
+        <tr>
+            <th>Saat</th>
+            <th>Pazartesi</th>
+            <th>Salı</th>
+        </tr>
+        <tr>
+            <td>08-10</td>
+            <td rowspan="2">Kahvaltı</td>
+            <td>Serbest Koşu</td>
+        </tr>
+        <tr>
+            <td>11-12</td>
+            <td>Yürüyüş</td>
+        </tr>
+    </table>
+         Yukarıda gördüğünüz gibi; colspan değeri verilen <td> etiketi, iki sütunu da kaplamış ve tarayıcı tarafından
+             otomatik olarak sola hizalı yazılmıştır. 
+
+
+
+        DAHA UZUN T
+        ABLOLAR Web sitemizde kullandığımız 
+        tabloların ana içeriğini, ilk satırını ve 
+        son satırını birbirinden ayırt etmek için kullanılan üç öge vardır.
+
+        1.   <thead> : 
+            Tablonun başlığı <thead>etiketi içerisine yerleştirilir.
+        2.  <tbody> : 
+            Tablonun içeriği <tbody>etiketi içerisine yerleştirilir.
+        3.  <tfoot> : T
+            ablonun alt bilgisi <tfoot>etiketi içerisine yerleştirilir
+
+ <table>
+        <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Sınav Adı</th>
+                <th>Sınav Salonu</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>15.08.2024</th>
+                <td>Web Temelleri</td>
+                <td>12.Salon</td>
+            </tr>
+            <tr>
+                <th>16.08.2024</th>
+                <td>CSS</td>
+                <td>1.Salon</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Müh.Fakültesi</td>
+            </tr>
+        </tfoot>
+    </table>
+    <thead> ve <tfoot> gibi etiketlerin asılkullanım amacı, 
+        ekrandan daha uzun bir tablo varsa tablo içeriği kaydırılsa
+     bile tarayıcıda başlık ve dipnotların görünür olmasını sağlamaktır.
+
+        Genel olarak üzeriden geçecek olursak;
+      HTML'de web sayfalarına tablo eklemek için 
+      <table> etiketi kullanılır.Her tablo satır satır oluşturulur.
+ Tablolarımıza satır eklemek için <tr> etiketini kullanırız.
+ Tablolarımız içerisinde <tr> etiketi ile
+     oluşturduğumuz satırlara tablo hücresi eklemek için
+      <td> veya <th> etiketini kullanılırız. 
+Oluşturduğumuz tablo hücrelerini birleştirmek için 
+'rowspan' veya 'colspan' özniteliklerini kullanırız.
+ Uzun tabloları <thead>, <tbody> ve <tfoot> 
+    etiketlerini kullanarak ayırabiliriz.
+    -->
+
+
+</body>
+</html>

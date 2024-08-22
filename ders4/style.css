@@ -1,0 +1,200 @@
+/* 
+Şimdi ben ilk olarak box1-2-3'e containerdan önce
+varsayılan bir genişlik ve yükseklik değerlerinden farklı olarak
+kendi istediğimiz değerleri verelim ki görüntüsünü oluşturalım.
+
+Şimdi oluşturduk benim bu 3 kutum kontainer kapsayıcımın içindeler.
+
+Şimdi position'a giriş yapıyoruz.
+Poısition neydi şu anda bunlar block şekilde kapsayıcıydı
+ve oldugu yerde ki tüm satırları kapsıyordu.
+
+kutu1'e bir genişlik vermemiş olsam ne olcak, bir üstünde ki
+ana kapsayıcısının genişliği kadardır, bakalım hemen 
+box1'den width'i kaldralım.500px'lik bir konumlandırma yapar kendine.
+
+Şİimdi position:relative diye bir özelliğimiz var position yazınca
+gelen ilk özellik. Nedir bu relative;
+Mesala box2 için konulaşlım ben buna position:relative diyince
+ne olacak, hiçbir şey olmaytacak. relative göreceli demek.
+Burda diyor ki bize biz bir etiketin positiona relative verdiysen
+onun konumunu ayarlayabilirsin dmemektir.
+Yönümüz derken 4 tane değeriimiz var yukarı,aşağı,sağ,sol
+biz bir etikete relative verdiysek eğer, örneğin left:30px verelim
+ne oldu yana 30px lik kayma yapma ama neden yaptı varsayılan olarak
+bulunduğu alanı biz relative vererek göreceli hale getirdik sonrasında
+solundan 30px'lik boşluk verdik.
+Bu margin değildir karıştırılan yer bu işte margin'le aynı mıdır diye
+hayır değildir, bu bizim kutumuzun konumunu belirliyor
+,bizim görecemize göre.
+Neden değildir ben margin'e top özelliği verince bir birinin üstüne
+bindirme işlemi yapabiliyor muyum, yapamıyorum ama burda 
+top:30px verirsek bakalım hep beraber, üstüne bindirme yapıyor.
+Göreceli dediğim yer bu aslında konumuyla istediğim gibi
+oynayabiliyorum. Yukarıdan bir kuşbakışı olarak düşünebilirz,
+Block türünde ki etiketler bir birinin üstüne gelmiyordu,
+ama burda ben istediğim gibi üstüne de geçirebiliyorum.
+
+Şimdi ben left:400px; verirsem bu tam sağa gelecektir,
+neden, şimdi benim başlangıç değerim neresi sol üst noktası
+ve bu sol üstten 400px boşluk veriyorum kendisinin de 100px'lik
+bir genişliği var 500px oluyor ve tam containerımın en son noktasına
+geliyor. 400'den fazla verirsem yani toplam genişliği 500px'i geçince
+ne olacak, 
+
+
+500px ver left'e kendisi 500px değer alıyor ve birde kutunun 100px
+değeri oldugu için onu da ekliyor yani toplamda 600px'lik bir
+kayma yapıyor. Bunu %'lik olarak ta gösterebiliriz yani
+100% verdiğimiz zaman width'i yine 500px kaydırıyor ve kendi
+100px' değerini koyup toplamda 600px'lik kaydırma yapıyor.
+80% verirsem de tam 400px lik değerinin oraya gelir.
+
+Position:relative; vermediğimde zaten top,left gibi özelliklerim
+çalışmayacaktır. kaldır relative'i göster.
+
+Yani kısaca neymiş relative: Bir biz etiketin varsayılan konumunun
+haricinde bir konumlandırma yapmak istersek ve ona kuş bakışı 
+bir birinin üstüne dahi gelse herhangi bir problem yaratmayacak
+bir durumda kaldıysam relative ile bunu sağlayabiliyorum.
+Zıt değerleri de kullanamayız yani left varken right,
+top varken de bottom kullanılamaz.
+
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: relative;
+    top:30px;
+    left: 100px;
+}
+
+Diğer bir özelliğimiz vardı absolute;
+Şimdi ben box2'me position:absolute verince box3'üm kayboldu.
+Neden, aslında kaybolmadı kutu2'miz kutu3'ün üstüne binmişl oldu
+nasıl anlarız box2 height'ini 30px yapayım, aslında kutumuzu görüyporuz,
+farkı bu şurda relative'de ne oluyordu üst üste bindiği gibi burda da
+binme oluyor, ben left'ine 400px vbereyim(tekrar absolute yap). 
+solundan 400px lik bosluk
+bıraktı ama kutu3'te yukarıya çıkmıs oldu, relative verince 
+kapsayıcımı yokmuş gibi davranıp üst sekmeye çıkmıuyordu
+ama absolute verince benim o kapsayıcım yokmuş gibi davranıp 
+üstüne çıkıyor. bottom'a 10px verelim noldu kaydı gittiği aşağıya
+absolute olan bir etiket her zaman atasına bakar atası ne container
+container'da bir position var mı yok, o zaman onunda atasına bakar
+orda da yok en son body'ye bakar varsayılan olarak kendini konumlandırma
+işlemini yapar.Yani absolute dediğimizde ve bottom:0; verelim
+verdiğimizde ne oldu alta yapıştı ekranı ne kadar büyütüp
+küçültsem de o anki body'nin en alt noktasını alır.
+Ama ben container'ın positiona:relative; değeri verirsem
+noldu containerımöın altına sabitlenir. hatta box2'ye 
+left:200px; verirsek tam ortalanmıs olur. 500 containerdı,
+kendi genişliği 100 400 oluyor yarısıda 200px tam ortasına alır.
+absolute'da her zaman atasına bakar onun bir özelliği var mı diyerek
+relative de ise atasının sınırına göre davranır.
+
+Şimdi box2'me left:50px; verelim altta katan kutum görünüyor,
+ben hangisinin önce görünmesini istersem, bunu z-index;
+ile konumlandırmasını yapmam gerekiyor.z-index'i yüksek
+olan her zaman en üstte görünür.
+şimdi ben box2'me z-index:1; ve box3'üme z-index:2; verirsem
+ne beklenir kutu3'ün üstte olmasını verelim bakalım,
+ne oldu olmadı neden çünkü z-index'im her zaman bir position
+değerinin verilmesini bekler.ben box3'e position:relative verip
+tekrar kayıt edersem bakın bu sefer bunun üstüne bindi.
+
+ne öğrendik absolute ve relative;absolute mutlak bir değerdir
+yani bulunduğu değeri yok varsayıp daha yukardan istediğim
+yere konumlandırabiliyprum.relative'de aynıdır fakat bulunduğu yer
+orada kalır üst taraftanda konumlandırma yapabiliyoprum.
+Ben hiçbir şey tanımlamazsam position'a onun varsyılan değeri
+static'tir.
+
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: absolute;
+    left:50px;
+    z-index:3;
+
+}
+.box3{
+    width: 100px;
+    height: 100px;
+    background-color: lime;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+position:fixed özelliğimiz var; nedir dersek şimdi
+bu örneklerimizi bi kaldıralım,html içerisinde ki boxlarıda kaldıralım,
+ordan devam.
+
+----------------------
+şimdi fixed classımızı seçelim, buna bir genişlik verelim 300px
+border verelim 3px solid orange.
+İçeriğimizi sağlmış olduk. Şimdi ben position:fixed verince
+fixed sabit demektir, yani ben fixed verince bunu ekrana sabitledim.
+görünen ekrana sabitedim sağ üste sabitleyelim
+right:0 ve top:0 verelim yukarudan da boşluk kalmasın.
+burda sabitten kastımız ney html'e geri dönüp bir div açalım
+içerisine lorem koyalım.
+ben bunu bottom:0 dersem sağ aşşğıya sabirleriz.
+Sitelere girince müşteri temsilcilerinin veya yapay zeka robotlarının
+bildirim gibi durumlarında kullanırız.
+.fixed{
+    position: fixed;
+    width: 300px;
+    border: 3px solid orange;
+    right: 0;
+    bottom: 0;
+    background-color: green;
+}
+
+----------------------------------------------
+şimdi diğer özelliğimiz position:stick;
+onun için html kısmını temizleyelim ve bi metin girelim.
+ve bir div açıp içerisine burası stick alanı diyelim. html'geç.
+stick ne demek, varlıgını görmek için background ve border verelim,
+sticky: eğer bu etiket ekranda bir yerden taşmıyorsa normal kullanımına
+devam et ama taşma varsa fixed yapmaya yarar.
+default olarak sticky verdiğimizde bakın herhangi bir şey yok
+ama top:0 ve padding diyelim ki 5px verdiğimizde;
+standart alanı genişledi ve taşma yaptı gibi oldu bu durumda 
+ben ekranı kaydırmaya başladığımda yukarıya fixed yapıcak.
+tam top:0 değerini alınca fixedlanacak.
+Ama bu bazı tarayıcılarda desteklenmiyor safari gibi falan 
+yeni güncelleme getirmiş olabilirler safaride olmayanlar varsa
+    position: -webkit-sticky;
+    etiketini ekleyin safari veya çalışmayan diğer tarayıcılarda da 
+    desteklenir.
+Ve bununla positionların tüm görünümülerini görmüş olduk
+bi bize dizayn olarak ön bilgisini veriyor,
+web sitesinde nasıl düzenli bir görünüm yapılıyor
+bunların hepsinin atası aslında position iledir.
+.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: bisque;
+    border: 2px solid red;
+}
+
+*/
+

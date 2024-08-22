@@ -1,0 +1,232 @@
+/*
+Display->flex/grid:Bir öğenin nasıl görüneceğini belirttimiz etiket.
+
+grid:(satır ve sütun): Bir düzen oluşturmak için kullanıyoruz.
+Yatay hem diket eksende düzenleme yapmama olanak sağlar.
+Karmaşık düzenim oluşturmamız ve yönetilmesi kolaylaştırıyor.
+
+grid-template-colums 
+grid-template-rows
+Tanımlı oldugu sütun(ata kapsayacısı) içerisinde ki sütun ve satır sayılarını
+ve boyutlarını tanımlamama.
+grid-template-colums:1fr 2fr;
+(İki sütun, birinci 1 BİRİM, İkincisi 2 BİRİM genişliğinde) 
+
+grid-column / grid-row
+Grid tanımlamalarımın hangi sütun veya hangi satırlar içeirsinde yer 
+alacağını belirlediğimiz yerdi.
+grid-column:1/3; -> (Öğe, 1.sütundan 3. sütuna kadar uzanır )
+
+grid-gap( gap );
+Sütunlarum ve satırlarımın arasında ki boşluğu tanımlar.
+
+
+FLEX.
+Bir boyutlu (satır ve sütun) düzen olusturmak için kullanıyorum.
+
+Flexbox-> Öğşelerin hizalanmasını,hizalanan ögeler içerisinde ki 
+boşlukların yönetilmesini kolaylaıştırır.
+Öğelerin büyümesini,küçülmesini, düzenlemesini kontrol ederiz.
+
+flex-directon
+Flex containerin içerisinde ki ögelerin ana eksende nasıl düzenleneceğini
+belirleriz.
+
+flex-wrap: ögelerin sarmalanıp ve sarmalanmaycağını belirlerim.
+
+justify-content:Flex ögelerimin ana eksende nasıl hizanlanacağını belirlerim.
+
+
+align-items:Flex container yapımın içerisindeki ögelerin çapraz
+eksende(dikey) nasıl hizalanması gerektiğini söylerim.
+center,flex-start,strecth vb.
+
+
+
+cursor
+Fare imlecimle birlikte işaretçimin görünümü değiştiriyorum.
+Örneğin; cursor:pointer: imlec/etiket tıklanabilir hale getirir.
+
+
+----------------------------------------------------
+grid-template-colums:repeat(auto-fill, minmax(200px,1fr));
+Belirli bir desenin otomatik olarak tekrar edilmesini sağlşar.
+auto-fill;mümkün olan (ekran pixel değeri) en fazla sayıda sütunun
+yerleştirilmesini sağlıyoruz.
+Kontainer genişliğine göre OTOMATİK OLARAK COGALTILMASINI SAĞLAR.
+
+minmax(200px,1fr)
+200px:Her sütunun en az 200px genişliğinde olmasını sağlar.
+1fr:Sütunların mevcut alandaki dağılımını sağlar(EŞİT ŞEKİLDE.)
+
+
+*/
+
+
+/* GRİD İLE CARD DİZME CSS */
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT',;
+    font-size: 20px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 10px;
+    background-color: red;
+    border-radius: 30%;
+}
+
+.card{
+    background-color: #f0f0f0;
+    border: 1px solid purple;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+/*--------------------------------------------------------- */
+
+/* FLEX İLE 3'LÜ CONTENT */
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+}
+.content-box{
+    background-color: #e0e0e0;
+    border: 2px solid gray;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    flex: 1;
+}
+
+/* --------------------------------------------------------- */
+/* FLEX 3'LÜ CONTENT */
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+}
+.content-box{
+    background-color: aqua;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    float: 1;
+}
+/* ------------------------------------------------------- */
+/* FLEX İLE HERO CSS */
+.hero-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    background: url('favicon.jpg') no-repeat center  center/cover  ;
+    background-size: auto;
+}
+.hero-content{
+    text-align: center;
+    color: black;
+    padding: 20px;
+    /* background:antiquewhite; */
+    border-radius: 8px;
+}
+button{
+    background-color: aquamarine;
+    border: none;
+    color: #f0f0f0;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: burlywood;
+}
+/* ------------------------------------------------------ */
+/* GRİD İLE HERO CSS */
+.hero-grid{
+    display: grid;
+    place-items: center;
+    /* height: 100vh; */
+    background: url(baby.jpg) no-repeat center center/cover;
+    background-size: auto;
+}
+.hero-content{
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+.color{
+    color:rgb(17, 68, 68) ;
+}
+/* ---------------------------------------------------- */
+/* FLEX İLE NAVBAR CSS */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+.logo{
+    font-size: 24px;
+}
+.nav-links{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+/* -------------------------------------------------- */
+/* CARD TASARIMI */
+.card{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px red ;
+    max-width: 300px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 1s;
+}
+.card:hover{
+    transform: scale(1.05);
+}
+.card-img{
+    width: 100px;
+    height: auto;
+}
+.card-body{
+    padding: 20px;
+}
+.card-title{
+    margin: 0 0 20px;
+    font-size: 22px;
+    color: #333;
+}
+.card-text{
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #666;
+}
+.card-btn{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #006bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 1s;
+}
+.card-btn:hover{
+    background-color: #004bff;
+}

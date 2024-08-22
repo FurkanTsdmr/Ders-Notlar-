@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <!-- Formlar -->
+ <!-- Burda kullandığımız ve en önemli olan 3 tane parametremiz vardır
+  1. action özelliği : Girilen bilgilerin hangi sayfaya 
+  yönlendirileceğini belirtiriz.
+   Eğer herhangi bir değer girilmezse aynı sayfa içerisinde işlem yapar.
+
+  2. method özelliği : Form'dan giden veriler gönderilirken 
+  hangi HTTP methodunun kullanacağını belirtiriz. 
+  GET veya POST. Varsayılan değer GET'tir.
+Get meyhoduyla giden veriler :
+ tarayıcıda sayfa adresi kısmında görüenecektir.
+  Önemli verilerin bulundugu forumda kullanılması tavsiye edilmez.
+Post methoduyla gönderilen verilerde veriler adres 
+çubugunda(url) görünmez.
+ Önemli veriler olsun veya olmasın Post ile göndermemiz daha iyi olacaktır.
+
+ 3.target özelliği :
+  Verilerin hangi konumda-sekmede açılağını belirtiriz.
+   "_blank : Farklı sekme / "_self:" aynı sekme içeriinde açar"-->
+ <!-- 
+
+ 
+input:En çok kullanılan form etiketidir.
+
+type: etiketin hangi şekilde kullanılacağını belittiğimiz kısımdır;
+text,number,button,checkbox,color,date,email,file,hidden,image,month,
+password,radio,reset,submit,tel,week etiketlerini alır
+
+text:düz yazı değeri alacağını belirtiriz.
+Tek satırlık veri girişlerinde kullanırız.
+
+name:Her form elemanı bir name özelliğine sahip olmalıdır
+ yoksa gönderdiğimiz değeri gönderemez. örneğin ismini gönderiyorsak 
+
+<input type="text" name="ad"> şeklinde tanımlamasını yapmamız lazım.
+
+password:Şifre girişleri için kullaılır girilen değer maskel
+submit:Form verilerini form işleyicisine onaylanıp gönderilmesini sağlar. 
+action kısmında belirttiğimiz adrese gönderir.
+
+
+--------------------------------------
+reset:Form elemanlarıın içindeki verileri varsayılan değerlerine 
+dönüştürmek için kullanılır.
+
+radio:Kullanıcıya birden fazla seçenek sunup bunlardan 
+birisini seçtirmek istediğimiz zaman kullanırız.
+
+2 veya ne kadar değer varsa hepsine  atamasını yapmalıyız.
+<form action="google.com" method="POST" target="_blank">
+    Cinsiyet<br>
+    <input type="radio" name="cinsiyet" value="erkek">Erkek
+    <input type="radio" name="cinsiyet" value="kadın">Kadın
+</form>
+Burada ki value değeri seçilen seçeneğin verisini belirttiğimiz yerdir.
+BURADA DİKKAT ETMEMİZ GEREKEN YER KULLANICIYA 
+DEĞER SEÇTİRİRKEN İKİ DEĞERİNDE NAME 
+DEĞERLERİNİN AYNI OLMASIDIR YOKSA KULLANICI İKİ DEĞERİ DE 
+SEÇEBİLİR VE İSTEDİĞİMİZ SONUCU ALAMAYIZ.
+-----------------------------------------
+ checkbox:Kullanıcımıza birden fazla seçenekj 
+ sunarak aralarınmda çoklu seçim yapmasını istediğimiz zaman kullanırız.                         
+                           
+ -->
+
+<!-- 
+ <h2>FORMLAR</h2>
+
+ <form action="asdasd.com" method="POST">
+<input readonly placeholder="LÜTFEN EKSİKSİZ GİRİN."><BR>                                
+<input type="text" name="ad" placeholder="Adınızı Giriniz." 
+required autofocus autocomplete="name"> <br>
+<input type="text" name="soyad" placeholder="Soyadınızı Giriniz." 
+required><br>
+<input type="password" placeholder="Şifrenizi Giriniz." required><br>
+<input type="number" placeholder="Numaranızı Giriniz."
+ required min="10" max="100" step="5"><br>
+<p>Hobileriniz;</p>
+ Kitap: <input type="checkbox" name="hobi1"><br>
+Keman: <input type="checkbox" name="hobi2"><br>
+Yürüyüş : <input type="checkbox" name="hobi3"><br>
+<p>Cinsiyetiniz;</p>
+Erkek:<input type="radio" name="cinsiyet">
+Kadın:<input type="radio" name="cinsiyet"><br>
+<input type="color" name="renk"> <br>
+<input type="datetime-local" name="tarih" min="1980-01-01" ><br>
+<input type="email" name="email" > <br>
+<input type="file" name="dosya" ><br>
+<input type="image" name="img" ><br>
+<input type="hidden" name="görünmez"><br>
+ <input type="range" name="aralık"><br><br>
+   [ Hangi karakterlerin girileceğini]
+ {Girilecek karakterin adedini belirtir.} 
+ <p>Telefon Numarası:</p>
+ <input type="tel" name="telefonNo" 
+ pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" 
+ maxlength="10"><br>
+ Arama:
+   Burda formun dışında bir submit butonu eklersek
+  ve id lerini aynı yaparsak formun içinde sayıp gönderilen
+ verileri onunla beraber yollar. -->
+
+  
+ <!--
+ formmethod özelliği form elemanlarının 
+ hangi özellikle gönderileceğini belirler.normal değerimiz
+ POST fakat biz farklı bir submit ekleyip onun
+ formmethod="GET" yapıp o butondan submit edersek
+ GET olarak gönderir.
+
+ <input type="submit" value="Ben Butonum" style="margin-top: 20px;"><br>
+  <input type="reset" name="reset"value="Reset">   <br> 
+ 
+formnovalidate : özelliği doğrulama yapmadan göndermemizi sağlar.
+email kısmında bunu yaparsak @ işareti ve decvamının olduguna bakmaz 
+gönderir. -->
+
+<!-- select: coklu seçim arasında bir elemanı seçtirteceğimiz etikettir.
+ <select name="sehir">
+        <p>Yaşadığınız Şehir:</p>
+        <option value="İstanbul">İstanbul</option>
+        <option value="Ankara">Ankara</option>
+        <option value="İzmir">İzmir</option>
+ </select>
+</form>          -->  
+
+
+<!-- 
+Şimdi bizler için önemli konulardan biri aklnınızda tam oturması için
+ilki position,box modelleri, ve grid yapısıdır.
+Bugün position'ü görücez ve aklımızda oturtucaz. 
+
+İlk olarak bir tane div oluşturacam ve bunun adına container diyecem.
+ve içerisine 3 tane div daha oluşturucam isimlendirmelerini
+box1,box2,box3 dişyecem.
+
+Ve alt alta varsayılan şekilde block şekklinde geldiğini görcez.
+block neydi o satırı kapatıyor içeriği ne olursa olsun ve diğer
+gelenleri altında kapsamı olmayan yerden başlatıyordu.
+
+Css'e sekmesine geç.
+
+
+
+-->
+<!-- 
+<div class="container">
+    <div class="box1">Kutu1</div>
+    <div class="box2">Kutu2</div>
+    <div class="box3">Kutu3</div>
+</div> -->
+
+<!-- Fixed'a geçince -->
+
+<!-- Bir div olusturuyorum classına fixed diyelim.-->
+ <!-- <div class="fixed">
+    Bu bir fixed örneğidir
+ </div> -->
+ <!-- olusturduktan sonra css'e dön. -->
+  <!-- Şimdi baya bir lorem oluşturduk yazılar üst üste bindi fixed
+   yerinde ve aşağıya yukarıya nereye gidersem gideyim,
+   benim fixed özelliğim ile oraya sabitlediğim için,
+   herhangi bir yere kaybolmöuyor.
+    -->
+  <!-- <div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla tenetur ratione quos pariatur aspernatur corrupti autem nostrum eveniet ea sequi atque 
+    delectus deserunt consequatur, eligendi iusto, sapiente ullam magnam quidem?
+  </div>
+  <div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla tenetur ratione quos pariatur aspernatur corrupti autem nostrum eveniet ea sequi atque 
+    delectus deserunt consequatur, eligendi iusto, sapiente ullam magnam quidem?
+  </div> -->
+<!-- -------------------------------------- -->
+<!-- Stick 
+ <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore molestias, natus placeat repellat eos hic recusandae quam tempora laborum debitis 
+    illum laboriosam porro, iure sit nulla modi omnis quia dolores?
+</p>
+<div class="sticky">Burası stick alanı</div>
+ hatta p'i kopyalayalım aşağıya scroll bar için istiyorum bunu
+ bunun yerine peş peşe div gibi veya p gibi yapmak yerine 
+ direkt inline bir style ile padding-bottom:2000px versek
+ otomatik olarak scroll bar çıakcaktır.Şimdi css'e geçelim.
+
+<p style="padding-bottom: 2000px;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore molestias, natus placeat repellat eos hic recusandae quam tempora laborum debitis 
+    illum laboriosam porro, iure sit nulla modi omnis quia dolores?
+</p>
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
