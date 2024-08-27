@@ -1,0 +1,36 @@
+ /* body{
+    background: url("https://postnauka.ru/img/2017/11/giphy-1-2.gif");
+}    */
+
+.nav{
+    background-color: #722872;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.nav-link{
+    color: antiquewhite;
+}
+
+.nav-link:hover{
+    color: aliceblue;
+    font-size: 20px;
+    transition: font-size 1s;
+    animation: pulse 2s infinite;
+}
+
+/* PULSE ANİMASYONU SONSUZ DÖNGÜSÜ */
+@keyframes pulse{
+    0%{
+        font-size: 16px;
+    }
+    50%{
+        font-size: 20px;
+    }
+    100%{
+        font-size: 16px;
+    }
+}
