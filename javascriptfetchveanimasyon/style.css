@@ -1,0 +1,76 @@
+body{
+    font-family: Arial,sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 50%;
+    align-items: center;
+}
+.user{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ,transform 0.5s ease;
+}
+.user.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+#fetchButton{
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 480px;
+}
+.search-bar input{
+    border: none;
+    outline: none;
+    padding: 5px;
+    flex: 1;
+}
+.search-bar button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+
+
+
+
+.button i {
+    margin-right: 5px;
+}
+.slider-container{
+    margin-top: 20px;
+}
+input[type="range"]{
+    width: 100%;
+}
